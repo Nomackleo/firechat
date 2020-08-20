@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firechat-bee2a": {
+      "hosting": {
+        "fireChat": [
+          "firechat-bee2a"
+        ]
+      }
+    }
+  }
+}
