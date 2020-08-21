@@ -11,15 +11,20 @@ import { Observable } from 'rxjs';
 export class ChatComponent implements OnInit {
 
   mensaje: string = ""
+  elemento: any
   
 
   constructor( public cs:ChatService ) {
     this.cs.cargarMensajes().subscribe( () => {
+      setTimeout( () => {
+        this.elemento.scrollTop = this.elemento.scrollHeight
+      },20)
       
     } )
    }
 
   ngOnInit(): void {
+    this.elemento = document.getElementById('app-mensajes')
   }
   enviar_mensaje() {
     if ( this.mensaje.length === 0 ) {
