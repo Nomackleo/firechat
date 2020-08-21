@@ -22,7 +22,15 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
   }
   enviar_mensaje() {
+    if ( this.mensaje.length === 0 ) {
+      return
+    }
+    this.cs.agregarMensaje( this.mensaje )
+    .then( () => this.mensaje = "")
+    .catch( (err) => console.log('Error', err ) )
 
+    
   }
 
+  
 }
