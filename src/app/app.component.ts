@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ChatService } from './services/chat.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'fireChat';
   
 
-  constructor( firestore:AngularFirestore ) {
+  constructor( public cs:ChatService ) {
     
   }
 }

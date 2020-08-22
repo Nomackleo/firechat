@@ -31,9 +31,10 @@ export class ChatService {
   }
 
   login( proveedor:string ) {
-    this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    proveedor === 'twitter' ? this.auth.signInWithPopup(new auth.TwitterAuthProvider()) :  this.auth.signInWithPopup(new auth.GoogleAuthProvider()) 
   }
   logout() {
+    this.usuarios = {}
     this.auth.signOut();
   }
 
